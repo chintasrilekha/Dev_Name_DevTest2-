@@ -1,0 +1,147 @@
+<!-- Reference - https://codepen.io/devesh8/pen/MWYEJEP -->
+
+<!DOCTYPE html>
+<html>
+<body>
+<div class="container">
+    <div class="contact-form">
+        <div class="first-row">
+            <div class="did-floating-label-content input-field">
+                <input class="did-floating-input" type="text" placeholder=" ">
+                <label class="did-floating-label">First Name</label>
+            </div>
+            <div class="did-floating-label-content input-field">
+                <input class="did-floating-input" type="text" placeholder=" ">
+                <label class="did-floating-label">Last Name</label>
+            </div>
+        </div>
+        <div class="second-row">
+            <div class="did-floating-label-content input-field">
+                <input class="did-floating-input" type="text" placeholder=" ">
+                <label class="did-floating-label">Business Email</label>
+            </div>
+            <div class="did-floating-label-content input-field">
+                <input class="did-floating-input" type="text" placeholder=" ">
+                <label class="did-floating-label">Company</label>
+            </div>
+        </div>
+        <div class="did-floating-label-content input-select-field">
+            <select class="did-floating-select" onclick="this.setAttribute('value', this.value);" onchange="this.setAttribute('value', this.value);" value="">
+                <option value=""></option>
+                <option value="1">Alabama</option>
+                <option value="2">Boston</option>
+                <option value="3">Ohaio</option>
+                <option value="4">New York</option>
+                <option value="5">Washington</option>
+            </select>
+            <label class="did-floating-label">Country</label>
+        </div>
+    </div>
+</div>
+
+
+<style>
+   
+.container{
+  width: 600px;
+  padding: 20px;
+  margin: 0 auto;
+  font-family: 'Inter', sans-serif;
+}
+.contact-form .first-row,
+.contact-form .second-row{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.input-field {
+  width: 50%;
+}
+.input-field:nth-child(even) {
+    margin-left: 10px;
+}
+.did-floating-label-content { 
+  position:relative; 
+  margin-bottom:20px; 
+}
+.did-floating-label {
+  color:#1e4c82; 
+  font-size:13px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:15px;
+  top:11px;
+  padding:0 5px;
+  background:#fff;
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+.did-floating-input, .did-floating-select {
+  font-size:12px;
+  display:block;
+  width:100%;
+  height:36px;
+  padding: 0 20px;
+  background: #fff;
+  color: #323840;
+  border: 1px solid #3D85D8;
+  border-radius: 4px;
+  box-sizing: border-box;
+  /* &:focus{
+    outline:none;
+    ~ .did-floating-label{
+      top:-8px;
+      font-size:13px;
+    }
+  } */
+}
+
+.did-floating-input:focus{
+  outline:none;
+}
+.did-floating-input:focus ~ .did-floating-label{
+  top:-8px;
+  font-size:13px;
+}
+.did-floating-input:not(:placeholder-shown) ~ .did-floating-label {
+  top:-8px;
+  font-size:13px;
+}
+
+select.did-floating-select {
+  -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+select.did-floating-select::-ms-expand {
+  display: none;
+}
+
+.did-floating-input:not(:placeholder-shown) ~ .did-floating-label {
+  top:-8px;
+  font-size:13px;
+}
+.did-floating-select:not([value=""]):valid ~ .did-floating-label {
+  top:-8px;
+  font-size:13px;
+}
+.did-floating-select[value=""]:focus ~ .did-floating-label {
+  top:11px;
+  font-size:13px;
+}
+.did-floating-select:not([multiple]):not([size]) {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='6' viewBox='0 0 8 6'%3E%3Cpath id='Path_1' data-name='Path 1' d='M371,294l4,6,4-6Z' transform='translate(-371 -294)' fill='%23003d71'/%3E%3C/svg%3E%0A");
+    background-position: right 15px top 50%;
+    background-repeat: no-repeat;
+}
+
+.input-field{
+
+}
+
+
+</style>
+</html>
